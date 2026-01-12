@@ -1,4 +1,4 @@
-SLACK_CHANNEL_NAME: "build-status"
+SLACK_CHANNEL_NAME: "assignment6"
 ENVIRONMENT: "prod"
 CODE_BASE_PATH: "env/prod"
 ACTION_MESSAGE: "InfluxDB deployed successfully to PROD"
