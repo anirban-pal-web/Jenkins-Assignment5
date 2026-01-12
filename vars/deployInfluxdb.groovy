@@ -1,10 +1,10 @@
-def call(Map params = [:]) {
+def call(Map params) {
+
+    def cfg = readYaml(text: libraryResource('prd_config.yml'))
 
     stage('Clone') {
         git params.REPO_URL
     }
-
-    def cfg = readYaml(file: "${params.CODE_BASE_PATH}/config.yml")
 
     if (cfg.KEEP_APPROVAL_STAGE == true) {
         stage('User Approval') {
@@ -13,7 +13,7 @@ def call(Map params = [:]) {
     }
 
     stage('Playbook Execution') {
-        sh "ansible-playbook deploy-influxdb.yml"
+        sh "ansible-playbook ${cfg.PLAYBOOK}"
     }
 
     stage('Notification') {
