@@ -3,4 +3,4 @@ ENVIRONMENT: "prod"
 CODE_BASE_PATH: "env/prod"
 ACTION_MESSAGE: "InfluxDB deployed successfully to PROD"
 KEEP_APPROVAL_STAGE: true
-PLAYBOOK: "deploy-influxdb.yml"
+PLAYBOOK: "inflxdb.yml"
