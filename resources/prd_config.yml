@@ -1,6 +1,6 @@
 SLACK_CHANNEL_NAME: "assignment6"
 ENVIRONMENT: "prod"
-CODE_BASE_PATH: "env/prod"
+CODE_BASE_PATH: "ansible-src/Assignment_5/roles/"
 ACTION_MESSAGE: "InfluxDB deployed successfully to PROD"
 KEEP_APPROVAL_STAGE: true
 PLAYBOOK: "inflxdb.yml"
