@@ -2,9 +2,15 @@ def call(Map params) {
 
     def cfg = readYaml(text: libraryResource('prd_config.yml'))
 
-    stage('Clone') {
-        git params.REPO_URL
+    stage('Clone Repo') {
+        echo "Cloning influxDB code..."
+        dir('ansible-src') {
+            git branch: 'Anirban',
+                url: 'https://github.com/OT-MyGurukulam/Ansible_33.git',
+                credentialsId: 'Git'
+        }
     }
+ 
 
     if (cfg.KEEP_APPROVAL_STAGE == true) {
         stage('User Approval') {
