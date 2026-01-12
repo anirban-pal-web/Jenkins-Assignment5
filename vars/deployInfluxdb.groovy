@@ -19,7 +19,7 @@ def call(Map params) {
     }
 
     stage('Playbook Execution') {
-        sh "ansible-playbook ${cfg.PLAYBOOK}"
+        sh "ansible-playbook -i ${cfg.CODE_BASE_PATH}/inventory.ini ${cfg.CODE_BASE_PATH}/${cfg.PLAYBOOK}"
     }
 
     stage('Notification') {
